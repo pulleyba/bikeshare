@@ -8,13 +8,16 @@
 ### Dataset
 
 > This data is provided by `Motivate`, which is a bike share provider in major cities. The data covers the first 6 months of 2017 for the three major cities. There are six core columns:
+
     * Start Time (2017-01-01 00:07:57)
     * End Time (2017-01-01 00:20:53)
     * Trip Duration (in seconds, 776)
     * Start Station (Broadway & Barry)
     * End Station (Sedgwick St & North Ave)
     * User Type (Subscriber or Customer)
+    
 > There is also 2 additional columns for Chicago and New York:
+
     * Gender (Female or Male)
     * Birth Year (2000.0)
     
