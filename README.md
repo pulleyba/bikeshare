@@ -47,7 +47,7 @@
 * earliest, most recent, most common year of birth (only available for NYC and Chicago)
 
 ### Software Required
-> Standard installion of anaconda 3 for data science.
+> Standard installation of anaconda 3 for data science.
 * Python 3.7.3
 * Pandas 0.24.2
 
