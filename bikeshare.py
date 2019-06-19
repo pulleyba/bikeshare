@@ -17,60 +17,26 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     while True:
         city = input("Choose Chicago, Washington D.C. (type washington) or New York City: ").lower()
-        if city == 'chicago':
-            print('\nGood Choice')
-            break
-        elif city == 'new york city':
-            print('\nGood Choice')
-            break
-        elif city == 'washington':
+        cities = ['chicago', 'new york city', 'washington']
+        if city in cities:
             print('\nGood Choice')
             break
         else:
             print('\nNot a Valid Entry\nTry Again')
     while True:
         month = input("Enter Month: ").lower()
-        if month == 'january':
-            print('\nGood Choice')
-            break
-        elif month == 'february':
-            print('\nGood Choice')
-            break
-        elif month == 'march':
-            print('\nGood Choice')
-            break
-        elif month == 'april':
-            print('\nGood Choice')
-            break
-        elif month == 'may':
-            print('\nGood Choice')
-            break
-        elif month == 'june':
+        months = ['january', 'february', 'march', 'april',
+                  'may', 'june']
+        if month in months:
             print('\nGood Choice')
             break
         else:
             print('\nNot a Valid Entry\nTry Again')
     while True:
         day = input("Enter Day of Week: ").lower()
-        if day == 'monday':
-            print('\nGood Choice')
-            break
-        elif day == 'tuesday':
-            print('\nGood Choice')
-            break
-        elif day == 'wednesday':
-            print('\nGood Choice')
-            break
-        elif day == 'thursday':
-            print('\nGood Choice')
-            break
-        elif day == 'friday':
-            print('\nGood Choice')
-            break
-        elif day == 'saturday':
-            print('\nGood Choice')
-            break
-        elif day == 'sunday':
+        days_of_week = ['monday', 'tuesday', 'wednesday', 'thursday',
+                        'friday', 'saturday', 'sunday']
+        if day in days_of_week:
             print('\nGood Choice')
             break
         else:
