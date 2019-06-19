@@ -152,7 +152,7 @@ def user_stats(df):
         except KeyError:
             print("Sorry, no information available for select City")
         else:
-             print("\nUser Types\nSubscribers: {}.\nCustomers: {}.".format(
+             print("\nUser Types\nSubscribers: {}\nCustomers: {}".format(
             count_user_types[0], count_user_types[1]))
         try:
             count_gender = df['Gender'].value_counts()
@@ -161,18 +161,13 @@ def user_stats(df):
         else:
             print("\nGender\nMale: {}\nFemale: {}".format(count_gender[0], count_gender[1]))
         try:
-            comm_birth_year = df['Birth Year'].mode()[0]
+            birth_years = df['Birth Year'].value_counts()
         except KeyError:
             print("Sorry, no information available for select City")
         else:
-            print("\nMost Common Birth Year is {}".format(comm_birth_year))
-        try:
-            max_birth_year = df['Birth Year'].max()
-            min_birth_year = df['Birth Year'].min()
-        except KeyError:
-            print("Sorry, no information available for select City")
-        else:
-            print("\nMax Birth Year is {}\nMinimum Birth Year is {}".format(max_birth_year, min_birth_year))
+            print("\nMost Common Birth Year is {:0.0f}".format(birth_years.idxmax()))
+            print("\nMax Birth Year is {:0.0f}\nMinimum Birth Year is {:0.0f}".format(birth_years.index.max(),
+                                                                            birth_years.index.min()))
         finally:
             print("\nThis took %0.4fs seconds." % (time.time() - start_time))
             print('-'*40)
