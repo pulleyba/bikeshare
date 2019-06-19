@@ -104,7 +104,7 @@ def time_stats(df):
     pop_day = df['day'].mode()[0]
     print("Popular Hour: {}\nPopular Month: {}\nPopular Day: {}.\n".format(
             pop_hour, pop_month, pop_day))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %0.4fs seconds." % (time.time() - start_time))
     print('-'*40)
 
     return pop_hour, pop_month, pop_day
@@ -113,7 +113,7 @@ def time_stats(df):
 def conv_trav_time(seconds):
     minutes = seconds//60
     remainder = seconds%60
-    return ('{} minutes and {} seconds').format(minutes,remainder)
+    return ('{} minutes and {:0.2f} seconds').format(minutes,remainder)
 
 def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
@@ -124,7 +124,7 @@ def station_stats(df):
     print("\nTop Five Most Popular Stations are:\n{}\n".format(comm_start_stat.head()))
     print(comm_end_stat.idxmax())
     print("\nTop Five Most Popular End Stations are:\n{}".format(comm_end_stat.head()))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %0.4fs seconds." % (time.time() - start_time))
     print('-'*40)
 
     return comm_start_stat, comm_end_stat
@@ -138,7 +138,7 @@ def trip_duration_stats(df):
     print("Mean Travel Time is: {}\nTotal Travel Time is {}.".format(
             conv_trav_time(mean_travel_time),
           conv_trav_time(total_travel_time)))
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %0.4fs seconds." % (time.time() - start_time))
     print('-'*40)
 
     return mean_travel_time, total_travel_time
@@ -174,7 +174,7 @@ def user_stats(df):
         else:
             print("\nMax Birth Year is {}\nMinimum Birth Year is {}".format(max_birth_year, min_birth_year))
         finally:
-            print("\nThis took %s seconds." % (time.time() - start_time))
+            print("\nThis took %0.4fs seconds." % (time.time() - start_time))
             print('-'*40)
             break
 
