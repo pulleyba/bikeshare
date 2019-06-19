@@ -118,18 +118,16 @@ def conv_trav_time(seconds):
 def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
-    comm_start_stat = df['Start Station'].mode()[0]
-    comm_start_stat2 = df['Start Station'].value_counts()
-    comm_end_stat = df['End Station'].mode()[0]
-    comm_end_stat2 = df['End Station'].value_counts()
-    print(comm_start_stat)
-    print("\nTop Five Most Popular Stations are:\n{}\n".format(comm_start_stat2.head()))
-    print(comm_end_stat)
-    print("\nTop Five Most Popular End Stations are:\n{}".format(comm_end_stat2.head()))
+    comm_start_stat = df['Start Station'].value_counts()
+    comm_end_stat = df['End Station'].value_counts()
+    print(comm_start_stat.idxmax())
+    print("\nTop Five Most Popular Stations are:\n{}\n".format(comm_start_stat.head()))
+    print(comm_end_stat.idxmax())
+    print("\nTop Five Most Popular End Stations are:\n{}".format(comm_end_stat.head()))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-    return comm_start_stat, comm_start_stat2, comm_end_stat, comm_end_stat2
+    return comm_start_stat, comm_end_stat
 
 
 def trip_duration_stats(df):
