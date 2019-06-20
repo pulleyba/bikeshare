@@ -156,7 +156,6 @@ def display_data(df):
         raw_data = df.head(num)
         print(raw_data)
 
-    return raw_data
 
 def main():
     while True:
